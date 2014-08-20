@@ -26,42 +26,55 @@ function initialize() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
 
-//            var pos = new google.maps.LatLng(position.coords.latitude,
-//                                            position.coords.longitude);
-
-            var pos = new google.maps.LatLng(47.395679, 0.690331);
-
             var mapOptions = {
-                zoom: 16,
-                center: pos
+                zoom: 10,
+                center: new google.maps.LatLng(position.coords.latitude,
+                                            position.coords.longitude);
             };
 
-//            var image = 'images/wc.png';
-            var image = '{{ asset('bundles/acmedemo/images/wc.png', absolute=true) }}';
-
             var map = new google.maps.Map(document.getElementById('map-canvas'),
-                mapOptions);
+                                        mapOptions);
 
-//            var infowindow = new google.maps.InfoWindow({
-//                map: map,
-//                position: pos,
-//                content: 'Location found using HTML5.'
-//            });
+            setMarkers(map, toilets);
 
-            var marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                title: 'L\'Etape à Pâtes. 91 rue Colbert, 37000 Tours',
-                icon: image
-            });
-
-//            map.setCenter(pos);
         }, function() {
             handleNoGeolocation(true);
         });
     } else {
         // Browser doesn't support Geolocation
         handleNoGeolocation(false);
+    }
+}
+
+var toilets = [
+    ['L\'Etape à Pâtes', 47.395650, 0.690846, 2],
+    ['Chez ouam', 47.395396, 0.692236, 1]
+];
+
+function setMarkers(map, locations) {
+    var image = {
+        url: '{{ asset('bundles/acmedemo/images/wc.png', absolute=true) }}',
+        size: new google.maps.Size(20, 32),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0, 32)
+    };
+
+//    var shape = {
+//        coords: [1, 1, 1, 20, 18, 20, 18 , 1],
+//        type: 'poly'
+//    };
+
+    for (var i = 0; i < locations.length; i++) {
+        var loc = locations[i];
+        var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: image,
+//            shape: shape,
+            title: loc[0],
+            zIndex: loc[3]
+        });
     }
 }
 
