@@ -1,0 +1,7 @@
+parameters:
+#    hug_front.example.class: Hug\FrontBundle\Example
+
+services:
+#    hug_front.example:
+#        class: %hug_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
