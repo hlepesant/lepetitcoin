@@ -1,0 +1,3 @@
+hug_api_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HugApiBundle:Default:index }

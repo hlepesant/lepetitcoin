@@ -1,0 +1,7 @@
+parameters:
+#    hug_api.example.class: Hug\ApiBundle\Example
+
+services:
+#    hug_api.example:
+#        class: %hug_api.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
