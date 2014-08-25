@@ -12,4 +12,12 @@ Car parfois, ça peurt pas attendre !
 Interface web en cours.
 Portage iOS et Android à faire (contributors are welcome).
 
+
+Technologies
+------------
+
+Web : Symfony2
+Data : Elastisearch
+
+Enjoy,
 Hug
