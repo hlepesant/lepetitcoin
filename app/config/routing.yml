@@ -1,6 +1,6 @@
 hug_api:
     resource: "@HugApiBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /api
 
 hug_front:
     resource: "@HugFrontBundle/Resources/config/routing.yml"
