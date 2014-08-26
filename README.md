@@ -16,10 +16,10 @@ Portage iOS et Android à faire (contributors are welcome).
 Technologies
 ------------
 
-Coté Serveur : Symfony2,
-Coté Client : Angular.js
-Coté Data : Elastisearch
-Coté Map : Google Map API
+* Coté Serveur : Symfony2
+* Coté Client : Angular.js
+* Coté Data : Elastisearch
+* Coté Map : Google Map API
 
 Enjoy,
 Hug
