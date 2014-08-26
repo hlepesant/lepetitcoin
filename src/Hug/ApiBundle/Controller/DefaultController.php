@@ -21,9 +21,14 @@ class DefaultController extends Controller
         $getParams = array(
             'index' => 'toilet',
             'type'  => 'external',
-            'id'    => '1',
         );
-        $retDoc = $client->get($getParams);
+
+        $getParams['body']['query']['match']['name'] = 'STRALOY';
+
+        $retDoc = $client->search($getParams);
+
+        print_r( $retDoc );
+        exit;
 
         return new JsonResponse($retDoc);
     }
