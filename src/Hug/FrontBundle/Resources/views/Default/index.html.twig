@@ -7,7 +7,6 @@
 
 {% block gmapscripts %}
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ apikey }}&language={{ apilanguage }}"></script>
-    <!-- script type="text/javascript" src="{{ asset('bundles/hugfront/js/lepetitcoin.js') }}"></script -->
     {{ include('HugFrontBundle:Default:gmap.html.twig') }}
 {% endblock %}
 
