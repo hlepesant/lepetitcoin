@@ -1,40 +1,18 @@
-{% extends '::base.html.twig' %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('bundles/hugfront/css/style.css') }}" type="text/css" rel="stylesheet" />
-{% endblock %}
+{% extends 'HugFrontBundle::layout.html.twig' %}
 
 {% block gmapscripts %}
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ apikey }}&language={{ apilanguage }}"></script>
-    {{ include('HugFrontBundle:Default:gmap.html.twig') }}
-{% endblock %}
-
-{% block title %}Le Petit Coin...vite{% endblock %}
-
-{% block body %}
-
-{{ include('HugFrontBundle:Default:navbar.html.twig') }}
-
-{{ include('HugFrontBundle:Default:jumbotron.html.twig') }}
-
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-10">
-            <div id="map-canvas"></div>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
+    {{ parent() }}
+    {#{ include('HugFrontBundle:Default:gmap.html.twig') }#}
+    <script>
+    var wc_icons = wc_icons || {};
+    wc_icons.classic    = "{{ asset('bundles/hugfront/images/wc_classic.png') }}";
+    wc_icons.dark       = "{{ asset('bundles/hugfront/images/wc_dark.png') }}";
+    wc_icons.gradient   = "{{ asset('bundles/hugfront/images/wc_gradient.png') }}";
+    wc_icons.ios        = "{{ asset('bundles/hugfront/images/wc_ios.png') }}";
+    wc_icons.light      = "{{ asset('bundles/hugfront/images/wc_light.png') }}";
+    wc_icons.simple     = "{{ asset('bundles/hugfront/images/wc_simple.png') }}";
+    wc_icons.white      = "{{ asset('bundles/hugfront/images/wc_white.png') }}";
     
-    <hr>
-    
-    <footer>
-      <p>&copy; Company 2014</p>
-    </footer>
-</div> <!-- /container -->
-
+    </script>
+    <script type="text/javascript" src="{{ asset('bundles/hugfront/js/lepetitcoin.js') }}"></script>
 {% endblock %}

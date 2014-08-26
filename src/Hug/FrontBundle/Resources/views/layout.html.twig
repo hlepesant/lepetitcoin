@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/hugfront/css/style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block gmapscripts %}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ apikey }}&language={{ apilanguage }}"></script>
+{% endblock %}
+
+
+{% block title %}Le Petit Coin...vite{% endblock %}
+
+{% block body %}
+
+{{ include('HugFrontBundle:Default:navbar.html.twig') }}
+
+{{ include('HugFrontBundle:Default:jumbotron.html.twig') }}
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+    
+    <hr>
+    
+    <footer>
+      <p>&copy; Hugues Lepesant 2014</p>
+    </footer>
+</div> <!-- /container -->
+
+{% endblock %}
