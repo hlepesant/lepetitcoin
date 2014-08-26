@@ -7,7 +7,7 @@ Référencer les lieux publics (bars, restaurants, salles de cinéma, théatres,
 ou le patron autorise l'utilisation des comodités de l'établissement même si vous
 n'êtes pas un "consommateur".
 
-Car parfois, ça peurt pas attendre !
+Car parfois, cela ne peut pas attendre !
 
 Interface web en cours.
 Portage iOS et Android à faire (contributors are welcome).
@@ -16,9 +16,10 @@ Portage iOS et Android à faire (contributors are welcome).
 Technologies
 ------------
 
-Web : Symfony2
-
-Data : Elastisearch
+Coté Serveur : Symfony2,
+Coté Client : Angular.js
+Coté Data : Elastisearch
+Coté Map : Google Map API
 
 Enjoy,
 Hug
