@@ -1,0 +1,25 @@
+{
+    "toilet": {
+        "id" : { "type": "string" },
+        "name" : { "type": "string" },
+        "address" : { "type": "string" },
+        "city" : { "type": "string" },
+        "postalcode" : { "type": "string" },
+        "email" : { "type": "string" },
+        "phone" : { "type": "string" },
+        "picture" : { "type": "string" },
+        "isActive": { "type" : "boolean" },
+        "description" : { "type": "string" },
+        "createdat" : { 
+            "type": "date",
+            "format" : "basic_date_time"
+        },
+        "location" : { "type" : "geo_point" },
+        "price" : { "type": "string" },
+        "sympathy" : { "type": "string" },
+        "marker" : { "type": "string" },
+    }
+}
+/* 
+{ "_id": "53fc35cdc035d732ea101fd4", "name": "Chez Ouam", "address": "961 Glenwood Road", "city": "Vale", "postalcode": 3370, "email": "bernicestevens@gronk.com", "phone": "+1 (960) 522-2125", "picture": "http://placehold.it/32x32", "isActive": true, "description": "Commodo adipisicing fugiat veniam nulla voluptate occaecat aute est velit velit adipisicing. Cupidatat id ad laborum aliqua consectetur id mollit excepteur incididunt ullamco in ullamco. Reprehenderit nisi sit id occaecat in in labore mollit. Dolore dolore consequat occaecat sunt nostrud esse qui ullamco consectetur. Voluptate ullamco duis magna exercitation ullamco cupidatat exercitation incididunt elit minim deserunt non sunt.\r\n", "createdat": "2014-03-25T11:52:56 -01:00", { "location" : { "lat": 47.395520, "lon": 0.692251 }}, "price": "mercy", "sympathy": "good", "marker": "classic" }
+*/
