@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "Deleting existing index"
+curl -XDELETE 'localhost:9200/toilet/'
+
+echo "Creating index wit hmapping"
+curl -XPOST 'http://localhost:9200/toilet' -d '
+{
+	"settings" : {
+		"number_of_shards" : 1
+	},
+	"mappings": {
+		"toilet": {
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"location": {
+					"type": "geo_point"
+				}
+			}
+		}
+	}
+}
+'
+
+echo "Inserting some doc"
+curl -XPOST 'localhost:9200/toilet/external/_bulk?pretty' --data-binary @toilet.json
+
+sleep 5
+
+echo "List index"
+curl 'localhost:9200/_cat/indices?v'
